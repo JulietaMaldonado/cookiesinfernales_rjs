@@ -1,0 +1,12 @@
+header{
+    background-color: white;
+    height: fit-content;
+    padding: 20px;
+    width: auto;
+}
+.logo{
+height: 100px;
+display: block;
+justify-content: center;
+align-items: center;
+}
