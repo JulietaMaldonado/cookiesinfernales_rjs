@@ -1,11 +1,22 @@
 nav{
     background-color: black;
-    height: 50px;
+    height: 60px;
     width: 100%;
-    margin: 0;
 }
-link{
-  color: white;
+.enlaces{
+  display: flex;
+  align-self: center;
+  justify-content: center;
+
+}
+.enlacenav{
+    color: white;
+    font-size: 15px;
     font-weight: 500;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    text-decoration: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
 }
