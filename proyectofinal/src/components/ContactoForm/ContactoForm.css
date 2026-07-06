@@ -1,0 +1,59 @@
+.contacto{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    padding: 50px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    width: 70%;
+    justify-content: center;
+    justify-self: center;
+}
+.contactotitulo{
+    text-align: center;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+label{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-family: "Baskervville", serif;
+    font-weight: 500;
+}
+input{
+    height: 25px;
+    background-color: #F3DAB1;
+    border: none;
+    border-radius: 8px;
+    height: 30px;
+}
+.botonenviar{
+    border: none;
+    border-radius: 10px;
+    background-color: brown;
+    color: white;
+    padding: 10px;
+    margin: 20px;
+    width: 100px;
+    align-self: center;
+}
+.mensajeerror{
+    color: red;
+    font-family: "Baskervville", serif;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+.mensajeenviado{
+    color: darkgreen;
+    font-family: "Baskervville", serif;
+    font-weight: 600;
+    font-size: 20px;
+    text-align: center;
+    margin: 15px;
+}
