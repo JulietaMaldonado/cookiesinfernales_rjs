@@ -1,5 +1,43 @@
 footer {
-    background-color: black;
-    color: white;
+display: flex;
+flex-direction: row;
+background-color: #F3DAB1;
+margin: none;
+padding: 20px;
+}
+h5{
+    font-size: 17px;
     font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.redes{
+    margin-left: 50px;
+}
+.contactofooter{
+    margin-left: 50px;
+
+}
+i{
+    color: black;
+}
+.tarjetasfooter{
+      margin-left: 50px;
+}
+h6{
+    font-size: 15px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: 600;
+    margin: 0;
+}
+.empletarjetas{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+.empleados{
+    margin-right: 50px;
+}
+p{
+    font-size: 6px;
 }
