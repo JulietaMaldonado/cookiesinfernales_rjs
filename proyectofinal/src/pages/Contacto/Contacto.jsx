@@ -1,9 +1,13 @@
 import {ContactoForm} from '../../components/ContactoForm/ContactoForm'
+import '../Contacto/Contacto.css'
 
 export function Contacto() {
     return(
    <>
-<ContactoForm />
+   <div className="contenedorcontacto">
+    <ContactoForm />
+   </div>
+
 </>     
     )
 
