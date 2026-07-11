@@ -5,15 +5,15 @@ export function Footer() {
   return (
     <>
     <footer>
-           <div class="redes">
+           <div className="redes">
             <h5>REDES SOCIALES</h5>
-           <div class="redesfooter"> 
+           <div className="redesfooter"> 
             <a href="https://www.instagram.com/cookiesinfernales/">
-                <i class="fa-brands fa-instagram fa-2x"></i>
+                <i className="fa-brands fa-instagram fa-2x"></i>
             </a>
         </div>
     </div>
-        <div class="contactofooter">
+        <div className="contactofooter">
             <h5>CONTACTO</h5>
             <ul>
                 <li>Whatsapp: (+54) 11-3442-5418</li>

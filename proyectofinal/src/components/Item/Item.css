@@ -1,0 +1,41 @@
+.tarjeta{
+    margin: 20px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    height: fit-content;
+}
+.cookiesabor{
+    width: 150px;
+}
+.nombrecookie{
+    text-align: center;
+    margin: 10px;
+    font-size: 25px;
+    color: black;
+}
+.preciocookie{
+    text-align: center;
+    font-size: 20;
+    font-weight: 600;
+    margin: 0;
+    padding: 5px;
+}
+.stocknumero{
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0;
+    padding: 5px;
+}
+.agregarbutton{
+    border: none;
+    border-radius: 10px;
+    background-color: brown;
+    color: white;
+    padding: 10px;
+}
