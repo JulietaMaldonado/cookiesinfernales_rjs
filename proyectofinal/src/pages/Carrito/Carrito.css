@@ -1,5 +1,20 @@
+.contenedorCarrito{
+    background-color: burlywood;
+    height: fit-content;
+    margin: 0;
+    padding: 30px;
+}
+
+.carritoContenedor{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
 .tarjeta{
-    margin: 10px;
+    margin: 20px;
     width: 300px;
     display: flex;
     flex-direction: column;
@@ -32,10 +47,15 @@
     margin: 0;
     padding: 5px;
 }
-.agregarbutton{
+button{
     border: none;
     border-radius: 10px;
     background-color: brown;
     color: white;
-    padding: 10px;
+    padding: 15px;
+    margin: 15px;
+    width: fit-content;
+    align-self: center;
+    justify-self: center;
+    display: flex;
 }

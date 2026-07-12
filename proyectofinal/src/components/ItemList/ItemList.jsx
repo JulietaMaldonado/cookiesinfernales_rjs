@@ -4,11 +4,18 @@ import '../ItemList/ItemList.css'
 export function ItemList ({productos}){
     return (
         <>
-        <div className="cookiescontenedor">
-        {productos.map(prod =>(
-            <Item key={prod.id} {...prod} />
-        ))}
-       </div>
+        {
+            productos.map((productos) => (
+              <Item 
+              key={productos.id} 
+              id={productos.id} 
+              nombre={productos.nombre}  
+              imagen={productos.imagen}
+              precio={productos.precio}
+              stock={productos.stock}
+              />
+            ))
+        }
         </>
     )
 }

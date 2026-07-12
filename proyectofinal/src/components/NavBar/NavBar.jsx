@@ -1,10 +1,13 @@
 import '../../components/NavBar/NavBar.css'
-import {Link} from 'react-router-dom';
-import { Inicio } from '../../pages/Inicio/Inicio';
-import { Productos } from '../../pages/Productos/Productos';
-import { Contacto } from '../../pages/Contacto/Contacto';
+import { Link } from 'react-router-dom';
+import { useContext } from "react";
+import { ContextoCarrito } from "../ContextoCarrito/ContextoCarrito";
+
 
 export function NavBar() {
+
+    const { cantidadProductos } = useContext(ContextoCarrito);
+
 
     return (
 
@@ -19,12 +22,14 @@ export function NavBar() {
                     INICIO
                 </Link>
 
+
                 <Link
                     to="/productos"
                     className="enlacenav"
                 >
                     PRODUCTOS
                 </Link>
+
 
                 <Link
                     to="/contacto"
@@ -33,12 +38,30 @@ export function NavBar() {
                     CONTACTO
                 </Link>
 
+
                 <Link
                     to="/carrito"
-                    className="enlacenav"
+                    className="enlacenav carritoLink"
                 >
-                    CARRITO
+
+                    <div className="iconoCarrito">
+
+                        <i className="fa-solid fa-cart-shopping"></i>
+
+
+                        {
+                            cantidadProductos > 0 &&
+
+                            <span>
+                                {cantidadProductos}
+                            </span>
+
+                        }
+
+                    </div>
+
                 </Link>
+
 
             </div>
 

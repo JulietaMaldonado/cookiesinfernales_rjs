@@ -9,10 +9,9 @@ import Cookie6 from '../../assets/cheesecake.png'
 import Cookie7 from '../../assets/bananitadolca.png'
 import Cookie8 from '../../assets/vauquita.png'
 import Cookie9 from '../../assets/birthdaycake.png'
-import '../ItemListContainer/ItemListContainer.css'
 
 export function ItemListContainer (){
-    const productos = [
+ const productos = [
 
         {id: '1', nombre: "Chocolate Chip", precio: 1200, stock: 20, imagen: Cookie1},
         {id: '2', nombre: "Triple Chocolate", precio: 1200, stock: 20, imagen: Cookie2},
@@ -36,9 +35,4 @@ export function ItemListContainer (){
        </>
 
         ) 
-       
-        
-        
-        
-    
-}
+ }

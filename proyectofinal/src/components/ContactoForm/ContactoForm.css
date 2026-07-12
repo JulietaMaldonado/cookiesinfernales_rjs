@@ -31,16 +31,6 @@ input{
     border-radius: 8px;
     height: 30px;
 }
-.botonenviar{
-    border: none;
-    border-radius: 10px;
-    background-color: brown;
-    color: white;
-    padding: 10px;
-    margin: 20px;
-    width: 100px;
-    align-self: center;
-}
 .mensajeerror{
     color: red;
     font-family: "Baskervville", serif;
