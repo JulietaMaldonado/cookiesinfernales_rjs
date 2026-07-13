@@ -41,3 +41,30 @@ h6{
 p{
     font-size: 14px;
 }
+
+@media only screen and (320px <= width <= 768px) {
+    footer{
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+    }
+    .contactofooter{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 80%;
+        padding: 10px;
+        margin-left: 20px;
+    }
+    .redes{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-left: 20px;
+}
+.empletarjetas{
+   display: flex;
+    flex-wrap: wrap; 
+    flex-direction: column; 
+}
+}

@@ -2,13 +2,25 @@ header{
     background-color: white;
     height: fit-content;
     padding: 20px;
-    width: auto;
+    width: 90%;
+    justify-self: center;
 }
 .logo{
+width: 600px;
 height: 100px;
 display: flex;
-align-self: center;
-justify-content: center;
-margin-left: auto;
-margin-right: auto;
+justify-self: center;
+}
+
+@media only screen and (320px <= width <= 768px) {
+    header{
+        width: fit-content;
+    }
+    .logo{
+      width: 80%;
+      height: 100%;
+      display: flex;
+      justify-self: center;
+      align-content: center;
+    }
 }

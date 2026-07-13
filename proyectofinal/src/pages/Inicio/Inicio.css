@@ -2,7 +2,7 @@
     margin: none;
     background-image: url('../../assets/fondo.jpg');
     padding: 30px;
-    height: 400px;
+    height: fit-content;
     background-size:cover;
 }
 h2{
@@ -19,6 +19,7 @@ h2{
     margin-bottom: 10%;
     background-color: white;
     border-radius: 10px;
+    height: fit-content;
 }
 .info{
     font-size: 18px;

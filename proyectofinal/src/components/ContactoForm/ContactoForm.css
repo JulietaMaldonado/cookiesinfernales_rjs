@@ -18,11 +18,11 @@ form{
     flex-direction: column;
 }
 label{
-    margin-top: 10px;
-    margin-bottom: 5px;
     font-size: 18px;
-    font-family: "Baskervville", serif;
     font-weight: 500;
+    color: black;
+    font-weight: 600;
+    margin-top: 15px;
 }
 input{
     height: 25px;
@@ -30,6 +30,7 @@ input{
     border: none;
     border-radius: 8px;
     height: 30px;
+    padding: 5px;
 }
 .mensajeerror{
     color: red;

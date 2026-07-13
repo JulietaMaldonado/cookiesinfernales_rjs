@@ -49,21 +49,21 @@ export function ContactoForm() {
       <form onSubmit={validarFormulario} noValidate>
 
         <label>Nombre y Apellido</label>
-        <p className="mensajeerror">{errorNombre}</p>
+        
         <input
           type="text"
           value={nombreApellido}
           onChange={(e) => setNombreApellido(e.target.value)}
         />
-
+<p className="mensajeerror">{errorNombre}</p>
         <label>Mail</label>
-        <p className="mensajeerror">{errorMail}</p>
+       
         <input
           type="email"
           value={mail}
           onChange={(e) => setMail(e.target.value)}
         />
-
+ <p className="mensajeerror">{errorMail}</p>
         <label>Asunto</label>
         <input
           type="text"
@@ -72,13 +72,13 @@ export function ContactoForm() {
         />
 
         <label>Mensaje</label>
-        <p className="mensajeerror">{errorMensaje}</p>
+        
         <input
           type="text"
           value={mensaje}
           onChange={(e) => setMensaje(e.target.value)}
         />
-
+<p className="mensajeerror">{errorMensaje}</p>
         <button className="botonenviar" type="submit">
           Enviar
         </button>

@@ -39,3 +39,9 @@
     color: white;
     padding: 10px;
 }
+
+@media only screen and (320px <= width <= 768px) {
+   .tarjeta{
+    width: 90%;
+   }
+}

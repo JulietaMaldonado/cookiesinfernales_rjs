@@ -13,53 +13,70 @@ import { useState, useEffect } from "react"
 import { collection, getDocs } from "firebase/firestore";
 import { db } from '../../../src/firebase';
 
-export function ItemListContainer (){
- const productos = [
+export function ItemListContainer() {
 
-        {id: '1', nombre: "Chocolate Chip", precio: 1200, stock: 20, imagen: Cookie1},
-        {id: '2', nombre: "Triple Chocolate", precio: 1200, stock: 20, imagen: Cookie2},
-        {id: '3', nombre: "Mantequilla de Mani", precio: 1500, stock: 15, imagen: Cookie3},
-        {id: '4', nombre: "Nutella", precio: 1500, stock: 10, imagen: Cookie4},
-        {id: '5', nombre: "Red Velvet", precio: 1500, stock: 10, imagen: Cookie5},
-        {id: '6', nombre: "Bananita Dolca", precio: 2000, stock: 10, imagen: Cookie6},
-        {id: '7', nombre: "Cheesecake", precio: 2200, stock: 8, imagen: Cookie7},
-        {id: '8', nombre: "Vauquita", precio: 2200, stock: 20, imagen: Cookie8},
-        {id: '9', nombre: "Birthday Cake", precio: 1200, stock: 15, imagen: Cookie9},
-      
-    ] 
+    const productosBase = [
 
-    const [productosFirebase,setProductosFirebase] = useState([]);
+        { id: '1', nombre: "Chocolate Chip", precio: 1200, stock: 20, imagen: Cookie1 },
+        { id: '2', nombre: "Triple Chocolate", precio: 1200, stock: 20, imagen: Cookie2 },
+        { id: '3', nombre: "Mantequilla de Mani", precio: 1500, stock: 15, imagen: Cookie3 },
+        { id: '4', nombre: "Nutella", precio: 1500, stock: 10, imagen: Cookie4 },
+        { id: '5', nombre: "Red Velvet", precio: 1500, stock: 10, imagen: Cookie5 },
+        { id: '6', nombre: "Bananita Dolca", precio: 2000, stock: 10, imagen: Cookie6 },
+        { id: '7', nombre: "Cheesecake", precio: 2200, stock: 8, imagen: Cookie7 },
+        { id: '8', nombre: "Vauquita", precio: 2200, stock: 20, imagen: Cookie8 },
+        { id: '9', nombre: "Birthday Cake", precio: 1200, stock: 15, imagen: Cookie9 },
 
-    useEffect(()=>{
+    ];
 
-    const obtenerProductos = async()=>{
+    const [productosFirebase, setProductosFirebase] = useState([]);
 
-        const consulta = await getDocs(
-            collection(db,"productos")
-        );
+    useEffect(() => {
 
-        const lista = consulta.docs.map(doc=>(
+        const obtenerProductos = async () => {
 
-            doc.data()
+            try {
 
-        ));
+                const consulta = await getDocs(
+                    collection(db, "productos")
+                );
 
-        setProductosFirebase(lista);
+                const lista = consulta.docs.map(doc => ({
+                    ...doc.data()
+                }));
 
-    }
+                setProductosFirebase(lista);
 
-    obtenerProductos();
+            } catch (error) {
 
-},[]);
+                console.log(error);
 
-       return(
-<>
+            }
 
-<div className="cookiescontenedor">
+        };
 
-<ItemList productos={productos}/>
+        obtenerProductos();
 
-</div>
-</>
-)
- }
+    }, []);
+
+    const productos = [
+
+        ...productosBase,
+
+        ...productosFirebase
+
+    ];
+
+    return (
+
+        <>
+            <div className="cookiescontenedor">
+
+                <ItemList productos={productos} />
+
+            </div>
+        </>
+
+    );
+
+}
