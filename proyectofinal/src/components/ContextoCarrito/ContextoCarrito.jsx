@@ -8,8 +8,32 @@ export function CarritoProvider({children}){
 
 
     const [carrito, setCarrito] = useState([]);
+    const [codigoDescuento, setCodigoDescuento] = useState("");
+    const [descuentoAplicado, setDescuentoAplicado] = useState(0);
 
+    const aplicarDescuento = (codigo) => {
 
+    if (codigo === "INFERNO98") {
+
+        setDescuentoAplicado(1000);
+
+        return true;
+
+    }
+
+    setDescuentoAplicado(0);
+
+    return false;
+
+}
+
+const quitarDescuento = () => {
+
+    setCodigoDescuento("");
+
+    setDescuentoAplicado(0);
+
+}
 
     const aniadirCarrito = (producto) => {
 
@@ -81,35 +105,59 @@ export function CarritoProvider({children}){
 
     };
 
+const cantidadProductos = carrito.reduce(
+    (total,item) => total + item.cantidad,
+    0
+);
 
+const subtotal = carrito.reduce(
 
-   const precioTotal = carrito.reduce(
+    (total,item)=>
 
-    (total,item) =>
         total + (item.precio * item.cantidad),
 
     0
 
 );
 
+const precioTotal = Math.max(
 
-const cantidadProductos = carrito.reduce(
-    (total,item) => total + item.cantidad,
+    subtotal - descuentoAplicado,
+
     0
+
 );
+
+
 
     return(
 
       <ContextoCarrito.Provider
-    value={{
-        carrito,
-        aniadirCarrito,
-        eliminarProducto,
-        vaciarCarrito,
-        precioTotal,
-        cantidadProductos
-    }}
->
+   value={{
+
+    carrito,
+
+    aniadirCarrito,
+
+    eliminarProducto,
+
+    vaciarCarrito,
+
+    precioTotal,
+
+    cantidadProductos,
+
+    codigoDescuento,
+
+    setCodigoDescuento,
+
+    descuentoAplicado,
+
+    aplicarDescuento,
+
+    quitarDescuento
+
+}}>
     {children}
 </ContextoCarrito.Provider>
 

@@ -59,3 +59,15 @@ button{
     justify-self: center;
     display: flex;
 }
+h3{
+    text-align: center;
+}
+.descuento{
+    font-weight: 600;
+    text-align: center;
+}
+.descuentoinput{
+    width: 80%;
+    display: flex;
+    justify-self: center;
+}
