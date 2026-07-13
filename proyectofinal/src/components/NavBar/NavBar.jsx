@@ -2,12 +2,12 @@ import '../../components/NavBar/NavBar.css'
 import { Link } from 'react-router-dom';
 import { useContext } from "react";
 import { ContextoCarrito } from "../ContextoCarrito/ContextoCarrito";
-
+import { AuthContext } from "../AuthContext/AuthContext";
 
 export function NavBar() {
 
     const { cantidadProductos } = useContext(ContextoCarrito);
-
+    const { logueado, logout } = useContext(AuthContext);
 
     return (
 
@@ -61,7 +61,38 @@ export function NavBar() {
                     </div>
 
                 </Link>
+                
+                
+               {
+    !logueado ?
 
+    <Link
+        to="/login"
+        className="enlacenav"
+    >
+        INICIAR SESIÓN
+    </Link>
+
+    :
+
+    <>
+
+        <Link
+            to="/admin"
+            className="enlacenav"
+        >
+            CARGAR PRODUCTO
+        </Link>
+
+        <button
+            onClick={logout}
+        >
+            CERRAR SESIÓN
+        </button>
+
+    </>
+
+}
 
             </div>
 

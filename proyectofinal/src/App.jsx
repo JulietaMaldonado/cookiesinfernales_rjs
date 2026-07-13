@@ -8,6 +8,9 @@ import { Contacto } from './pages/Contacto/Contacto';
 import { Inicio } from './pages/Inicio/Inicio';
 import { Productos } from './pages/Productos/Productos';
 import { Layout } from './Layout';
+import {ProtectedRoute} from '../src/components/ProtectedRoute/ProtectedRoute'
+import {CargarProductos} from '../src/pages/CargarProductos/CargarProductos'
+import { Login } from '../src/pages/Login/Login'
 
 export default function App() {
   return (
@@ -18,6 +21,8 @@ export default function App() {
         <Route path='/productos' element={<Productos />} />
         <Route path='/carrito' element={<Carrito />} />
         <Route path='/contacto' element={<Contacto />}></Route>
+        <Route path="/login" element={<Login />} />
+        <Route path="/admin" element={ <ProtectedRoute> <CargarProductos/> </ProtectedRoute>}/>
       </Route>
     </Routes>
     </BrowserRouter>

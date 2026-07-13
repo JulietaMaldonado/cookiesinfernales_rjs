@@ -9,6 +9,9 @@ import Cookie6 from '../../assets/cheesecake.png'
 import Cookie7 from '../../assets/bananitadolca.png'
 import Cookie8 from '../../assets/vauquita.png'
 import Cookie9 from '../../assets/birthdaycake.png'
+import { useState, useEffect } from "react"
+import { collection, getDocs } from "firebase/firestore";
+import { db } from '../../../src/firebase';
 
 export function ItemListContainer (){
  const productos = [
@@ -25,14 +28,38 @@ export function ItemListContainer (){
       
     ] 
 
-        return(
+    const [productosFirebase,setProductosFirebase] = useState([]);
 
-        <>
-        <div className="cookiescontenedor">
-             <ItemList productos={productos} />  
-        </div>
-         
-       </>
+    useEffect(()=>{
 
-        ) 
+    const obtenerProductos = async()=>{
+
+        const consulta = await getDocs(
+            collection(db,"productos")
+        );
+
+        const lista = consulta.docs.map(doc=>(
+
+            doc.data()
+
+        ));
+
+        setProductosFirebase(lista);
+
+    }
+
+    obtenerProductos();
+
+},[]);
+
+       return(
+<>
+
+<div className="cookiescontenedor">
+
+<ItemList productos={productos}/>
+
+</div>
+</>
+)
  }
