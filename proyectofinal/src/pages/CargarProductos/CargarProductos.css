@@ -56,3 +56,16 @@ input{
     gap:15px;
     text-align:center;
 }
+.crearCupon{
+    background-color: white;
+    margin: 30px;
+    width: 80%;
+    justify-self: center;
+    border-radius: 10px;
+    padding: 30px;
+    height: fit-content;
+}
+.descuentoPrecio{
+    text-align: center;
+    font-weight: 500;
+}

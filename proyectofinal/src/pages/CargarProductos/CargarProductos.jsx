@@ -30,6 +30,14 @@ export function CargarProductos() {
 
     ];
 
+    const [cupones, setCupones] = useState([]);
+
+    const [codigo, setCodigo] = useState("");
+
+    const [descuento, setDescuento] = useState("");
+
+
+
     const obtenerProductos = async () => {
 
         const consulta = await getDocs(
@@ -48,12 +56,13 @@ export function CargarProductos() {
 
     };
 
+useEffect(() => {
 
-    useEffect(() => {
+    obtenerProductos();
 
-        obtenerProductos();
+    obtenerCupones();
 
-    }, []);
+}, []);
 
 
 
@@ -187,7 +196,73 @@ export function CargarProductos() {
 
     };
 
+const obtenerCupones = async () => {
 
+    const consulta = await getDocs(
+
+        collection(db,"cupones")
+
+    );
+
+    const lista = consulta.docs.map(doc=>({
+
+        idFirestore:doc.id,
+
+        ...doc.data()
+
+    }));
+
+    setCupones(lista);
+
+}
+
+const guardarCupon = async(e)=>{
+
+    e.preventDefault();
+
+    await addDoc(
+
+        collection(db,"cupones"),
+
+        {
+
+            codigo,
+
+            descuento:Number(descuento)
+
+        }
+
+    );
+
+    setCodigo("");
+
+    setDescuento("");
+
+    obtenerCupones();
+
+}
+
+const eliminarCupon = async (id) => {
+
+    try {
+
+        await deleteDoc(
+
+            doc(db, "cupones", id)
+
+        );
+
+        obtenerCupones();
+
+    }
+
+    catch (error) {
+
+        console.log(error);
+
+    }
+
+};
 
     return (
 
@@ -308,15 +383,12 @@ export function CargarProductos() {
                 <div className="productosContenedor">
                 {
 
-                    productosTotales.map(producto => (
+                  productosTotales.map(producto => (
 
-                        <div
-
-                            className="productoAdmin"
-
-                            key={producto.idFirestore}
-
-                        >
+    <div
+        className="productoAdmin"
+        key={producto.idFirestore || producto.id}
+    >
 
                             <img
 
@@ -423,8 +495,93 @@ export function CargarProductos() {
                 </div>
 
             }
+           <div className="crearCupon">
+                <h2>
 
+Administrar cupones
+
+</h2>
+
+<form onSubmit={guardarCupon}>
+
+    <input
+
+        type="text"
+
+        placeholder="Código"
+
+        value={codigo}
+
+        onChange={(e)=>setCodigo(e.target.value)}
+
+        required
+
+    />
+
+    <input
+
+        type="number"
+
+        placeholder="Descuento"
+
+        value={descuento}
+
+        onChange={(e)=>setDescuento(e.target.value)}
+
+        required
+
+    />
+
+    <button>
+
+        Crear cupón
+
+    </button>
+
+</form>
+
+    {
+
+cupones.map(cupon=>(
+
+<div
+key={cupon.idFirestore}
+
+className="cuponAdmin"
+
+>
+
+   <h3>
+
+{cupon.codigo}
+
+</h3>
+
+<p className='descuentoPrecio'>
+
+-${cupon.descuento}
+
+</p>
+
+<button
+
+onClick={()=>eliminarCupon(cupon.idFirestore)}
+
+>
+
+Eliminar
+
+</button>
+
+</div>
+
+))
+
+}
+</div> 
         </div>
+
+ 
 
     );
 

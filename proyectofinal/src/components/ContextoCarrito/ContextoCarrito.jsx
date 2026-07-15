@@ -11,21 +11,48 @@ export function CarritoProvider({children}){
     const [codigoDescuento, setCodigoDescuento] = useState("");
     const [descuentoAplicado, setDescuentoAplicado] = useState(0);
 
-    const aplicarDescuento = (codigo) => {
+  
+const aplicarDescuento = async(codigoIngresado)=>{
 
-    if (codigo === "INFERNO98") {
+    const consulta = await getDocs(
 
-        setDescuentoAplicado(1000);
+        collection(db,"cupones")
+
+    );
+
+    const cupon = consulta.docs.find(doc=>
+
+        doc.data().codigo===codigoIngresado
+
+    );
+
+    if(cupon){
+
+        setDescuentoAplicado(
+
+            cupon.data().descuento
+
+        );
 
         return true;
 
     }
 
-    setDescuentoAplicado(0);
-
     return false;
 
 }
+const eliminarCupon = async(id)=>{
+
+    await deleteDoc(
+
+        doc(db,"cupones",id)
+
+    );
+
+    obtenerCupones();
+
+}
+
 
 const quitarDescuento = () => {
 
