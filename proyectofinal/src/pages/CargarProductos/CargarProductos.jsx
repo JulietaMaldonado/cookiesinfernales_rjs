@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { db } from '../../../src/firebase';
 import { collection, addDoc, getDocs, updateDoc, deleteDoc, doc } from "firebase/firestore";
 import { useRef } from "react";
-import { productosBase } from "../../data/productosBase";
+import { productosBase } from "../../data/productosbase";
 
 
 export function CargarProductos() {

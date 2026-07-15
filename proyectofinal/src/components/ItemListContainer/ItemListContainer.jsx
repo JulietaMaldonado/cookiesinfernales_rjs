@@ -12,7 +12,7 @@ import Cookie9 from '../../assets/birthdaycake.png'
 import { useState, useEffect } from "react"
 import { collection, getDocs } from "firebase/firestore";
 import { db } from '../../../src/firebase';
-import { productosBase } from "../../data/productosBase";
+import { productosBase } from "../../data/productosbase";
 
 export function ItemListContainer() {
 
