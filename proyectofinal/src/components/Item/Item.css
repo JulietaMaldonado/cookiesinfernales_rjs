@@ -39,6 +39,14 @@
     color: white;
     padding: 10px;
 }
+.mensajeAgregado{
+color: green;
+font-size: 14px;
+margin-top: 10px;
+font-weight: 600;
+text-align: center;
+}
+
 
 @media only screen and (320px <= width <= 768px) {
    .tarjeta{

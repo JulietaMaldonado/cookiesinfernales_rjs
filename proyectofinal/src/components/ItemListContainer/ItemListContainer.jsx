@@ -16,13 +16,6 @@ import { productosBase } from "../../data/productosBase";
 
 export function ItemListContainer() {
 
-    const productos = [
-
-    ...productosBase,
-
-    ...productosFirebase
-
-];
 
     const [productosFirebase, setProductosFirebase] = useState([]);
 
@@ -54,6 +47,13 @@ export function ItemListContainer() {
 
     }, []);
 
+    const productos = [
+
+    ...productosBase,
+
+    ...productosFirebase
+
+];
     return (
 
         <>

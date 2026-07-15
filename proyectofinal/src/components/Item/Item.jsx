@@ -1,19 +1,15 @@
-import '../Item/Item.css'
-import { useContext } from 'react'
-import { ContextoCarrito } from '../ContextoCarrito/ContextoCarrito'
+import '../Item/Item.css';
+import { useContext, useState } from 'react';
+import { ContextoCarrito } from '../ContextoCarrito/ContextoCarrito';
 
-export function Item({ id, nombre, imagen, precio, stock }) {
+export function Item({id, nombre, imagen, precio, stock}){
 
     const { aniadirCarrito } = useContext(ContextoCarrito);
 
-    const producto = {
-        id,
-        nombre,
-        imagen,
-        precio
-    };
+    const [mensaje, setMensaje] = useState(false);
 
-    return (
+    return(
+
         <div className="tarjeta">
 
             <img
@@ -23,24 +19,66 @@ export function Item({ id, nombre, imagen, precio, stock }) {
             />
 
             <h3 className="nombrecookie">
+
                 {nombre}
+
             </h3>
 
             <p className="preciocookie">
+
                 ${precio}
+
             </p>
 
             <p className="stocknumero">
-                Stock: {stock}
+
+                {stock}
+
             </p>
 
             <button
+
                 className="agregarbutton"
-                onClick={() => aniadirCarrito(producto)}
+
+                onClick={() => {
+
+                    aniadirCarrito({
+                        id,
+                        nombre,
+                        imagen,
+                        precio
+                    });
+
+                    setMensaje(true);
+
+                    setTimeout(() => {
+
+                        setMensaje(false);
+
+                    }, 2000);
+
+                }}
+
             >
+
                 Agregar a carrito
+
             </button>
 
+            {
+
+                mensaje &&
+
+                <p className="mensajeAgregado">
+
+                    ¡Producto agregado con éxito!
+
+                </p>
+
+            }
+
         </div>
+
     );
+
 }

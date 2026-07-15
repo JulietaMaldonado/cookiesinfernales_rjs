@@ -18,7 +18,8 @@ nav{
     margin-right: 30px;
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 span{
     margin: 5px;
