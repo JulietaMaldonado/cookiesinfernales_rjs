@@ -21,14 +21,18 @@ input{
     justify-self: center;
     border-radius: 10px;
     padding: 30px;
+    height: fit-content;
 }
 .productosContenedor{
     display: flex;
     flex-direction: row;
     justify-self: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
 }
 .productoAdmin{
-    margin: 20px;
+    margin: 40px;
 }
 .modal{
     position:fixed;

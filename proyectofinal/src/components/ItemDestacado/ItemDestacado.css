@@ -1,0 +1,33 @@
+.tarjetaDestacada{
+    margin: 10px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    height: fit-content;
+}
+.cookieDestacada{
+    width: 150px;
+}
+.nombrecookie{
+    text-align: center;
+    margin: 10px;
+    font-size: 25px;
+    color: black;
+}
+.precioDestacado{
+    text-align: center;
+    font-size: 20;
+    font-weight: 600;
+    margin: 0;
+    padding: 5px;
+}
+
+@media only screen and (320px <= width <= 768px) {
+   .tarjetaDestacada{
+    width: 80%;
+   }
+}

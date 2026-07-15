@@ -1,0 +1,28 @@
+.productosInicio{
+    background-color: burlywood;
+    margin: 0;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.productosGrid{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.linkProductos{
+    border: none;
+    border-radius: 10px;
+    background-color: brown;
+    color: white;
+    padding: 15px;
+    margin: 15px;
+    width: fit-content;
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    text-decoration: none;
+    font-weight: 600;
+}

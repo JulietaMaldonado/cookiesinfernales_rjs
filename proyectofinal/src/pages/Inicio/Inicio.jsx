@@ -1,3 +1,4 @@
+import { ProductosDestacados } from '../../components/ProductosDestacados/ProductosDestacados';
 import '../Inicio/Inicio.css';
 
 export function Inicio(){
@@ -11,6 +12,9 @@ export function Inicio(){
                 Especialmente chocolate chip cookies que no van desde el sabor clásico para este tipo de galletitas sino también hasta sabores diferentes y complejos como cheesecake de arándanos, bananita dolca, vauquita, etc. <br />
                 Pero también ofrece otros productos que varian desde la época del año hasta las festividades donde se pueden ver promociones especiales de productos no vistos comúnmente en este negocio.</p>
             </div>
+    </div>
+    <div className="productos">
+      <ProductosDestacados />
     </div>
     </>    
     )

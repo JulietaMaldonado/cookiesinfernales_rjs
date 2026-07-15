@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { db } from '../../../src/firebase';
 import { collection, addDoc, getDocs, updateDoc, deleteDoc, doc } from "firebase/firestore";
 import { useRef } from "react";
-
+import { productosBase } from "../../data/productosBase";
 
 
 export function CargarProductos() {
@@ -22,7 +22,13 @@ export function CargarProductos() {
 
     const [productoEliminar, setProductoEliminar] = useState(null);
 
+    const productosTotales = [
 
+    ...productosBase,
+
+    ...productos
+
+    ];
 
     const obtenerProductos = async () => {
 
@@ -302,7 +308,7 @@ export function CargarProductos() {
                 <div className="productosContenedor">
                 {
 
-                    productos.map(producto => (
+                    productosTotales.map(producto => (
 
                         <div
 

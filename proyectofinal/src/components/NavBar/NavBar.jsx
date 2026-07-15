@@ -85,8 +85,7 @@ export function NavBar() {
         </Link>
 
         <button
-            onClick={logout}
-        >
+            onClick={logout}>
             CERRAR SESIÓN
         </button>
 
